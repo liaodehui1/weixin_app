@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "电影演出赛事",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye1.png",
+        "selectedIconPath": "images/shouye2.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "菜单",
+        "iconPath": "images/menu1.png",
+        "selectedIconPath": "images/menu2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/wode1.png",
+        "selectedIconPath": "images/wode2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

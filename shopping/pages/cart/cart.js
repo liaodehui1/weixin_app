@@ -36,15 +36,9 @@ Page({
       num:this.data.carts[index].selected?this.data.num+1:this.data.num-1
     })
     // console.log(this.data.num)
-    if(this.data.num===this.data.carts.length){
-      this.setData({
-        selectAllStatus:true
-      })
-    }else{
-      this.setData({
-        selectAllStatus:false
-      })
-    }
+    this.setData({
+      selectAllStatus:this.data.num===this.data.carts.length?true:false
+    })
     this.getTotalPrice()
   },
   selectAll(e){

@@ -1,0 +1,14 @@
+<view class="cards">
+    <view class="card" wx:for="{{stories}}" wx:key="{{item.id}}">
+        <video src="{{item.video}}" 
+            poster="{{item.image}}" 
+            id="{{item.id}}"
+            hidden="{{currentVid!==item.id}}"></video>
+        <image src="{{item.image}}" 
+            hidden="{{currentVid===item.id}}" 
+            data-id='{{item.id}}' 
+            bindtap='play'>
+            <view class="label">{{item.duration}}</view>
+        </image>
+    </view>
+</view>

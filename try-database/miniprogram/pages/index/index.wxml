@@ -1,0 +1,14 @@
+<!-- 指令 block 不会输出标签 承载指令 性能-->
+<block wx:if="{{products.length===0}}">
+  <text>当前没有数据</text>  
+</block>
+<scroll-view wx:else scroll-y="true" scroll-with-animation="true" >
+  <block wx:for="{{products}}" wx:key="{{index}}">
+  <vant-card price="{{item.price}}"
+    desc="{{item.color}}"
+    title="{{item.title}}"
+    thumb="{{item.image}}"
+    data-id="{{item.id}}"
+    bindtap="doItemClick"></vant-card>
+</block>
+</scroll-view>

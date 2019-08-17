@@ -25,8 +25,11 @@
     其他未执行完的函数继续执行  
 + 原型上有then、catch等方法  
     1. then(onFulfilled, onRejected) 接受的两个参数都是回调函数  
-        第一个回调函数onFulfilled是调用该then方法的Promise对象状态为fulfilled(resolved)时调用  
+        + 第一个回调函数onFulfilled是调用该then方法的Promise对象状态为fulfilled(resolved)时调用  
             此回调函数接受的参数(res)是Promise对象中resolve时的值(res.data)  
-        第二个回调函数onRejected是状态为rejected时调用 此回调函数接受一个参数是reject时的值(失败的原因)  
+        + 第二个回调函数onRejected是状态为rejected时调用 此回调函数接受一个参数是reject时的值(失败的原因)  
+        + then返回一个Promise对象  
+            如果回调函数返回的是Promise对象，then返回的对象的状态和值与回调函数返回的一致   
+            如果回调函数返回不是Promise，则then返回的对象的状态为resolved，且值为回调函数返回的值或undefined
     2. catch(onRejected) 相当于then中的第二个回调函数  
         同时还能捕获then中执行时的异常情况  

@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="header">
+    <swiper class="swiper" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="programas">
+    <navigator url="../papers/index" class="programa">
+      <image class="programa-img" src="../../images/testPaper.png"></image>
+      <text class="programa-title">试卷库</text>
+    </navigator>
+    <navigator class="programa">
+      <image class="programa-img" src="../../images/videos.png"></image>
+      <text class="programa-title">视频</text>
+    </navigator>
+    <navigator class="programa">
+      <image class="programa-img" src="../../images/noto-share.png"></image>
+      <text class="programa-title">笔记分享</text>
+    </navigator>
+    <navigator class="programa">
+      <image class="programa-img" src="../../images/concern.png"></image>
+      <text class="programa-title">我的关注</text>
+    </navigator>
+    <navigator class="programa">
+      <image class="programa-img" src="../../images/upload-paper.png"></image>
+      <text class="programa-title">试卷上传</text>
+    </navigator>
+  </view>
+
+</view>

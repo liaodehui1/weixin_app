@@ -1,0 +1,20 @@
+<view class="container">
+    <form action="/">
+        <van-search
+            v-model="value"
+            shape="round"
+            background="#1296db"
+            placeholder="请输入搜索关键词"
+            show-action="{{showable}}"
+            bind:search="onSearch"
+            bind:cancel="onCancel"
+            bind:focus="onFocus"
+        />
+    </form>
+    <view class="pg-bd1" hidden="{{!showable}}">
+        <text>{{content}}</text>
+    </view>
+    <view class="pg-bd2" hidden="{{showable}}">
+        <text>{{content}}</text>
+    </view>
+</view>

@@ -1,12 +1,19 @@
 <view class="container">
   <view class="header">
-    <swiper class="swiper" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
-    </swiper>
+    <view class="swiper">
+      <swiper class="swiper-img" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="onSlideChangeEnd">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="swiper-dots">
+        <view class="dot {{current===0?'current':''}}"></view>
+        <view class="dot {{current===1?'current':''}}"></view>
+        <view class="dot {{current===2?'current':''}}"></view>
+      </view>
+    </view>
   </view>
   <view class="programas">
     <navigator url="../papers/index" class="programa">
@@ -30,5 +37,4 @@
       <text class="programa-title">试卷上传</text>
     </navigator>
   </view>
-
 </view>

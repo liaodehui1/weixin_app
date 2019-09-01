@@ -7,13 +7,19 @@ Page({
   data: {
     interval:4000,
     duration:200,
+    current:0,
     imgUrls: [
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
       'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
       'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
     ]
   },
-
+  onSlideChangeEnd(e){
+    // console.log(e)
+    this.setData({
+      current:e.detail.current
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

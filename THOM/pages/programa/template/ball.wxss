@@ -1,0 +1,41 @@
+.balls{
+  position: fixed;
+  right: 60rpx;
+  bottom: 100rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.balls .ball{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  background-color: rgba(170,170,170,1);
+  transition: all 500ms;
+}
+.balls .ball .ball_content{
+  display: block;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.balls .ball.hidden{
+  /* display: none; */ /*无法实现动画效果*/
+  background-color:rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
+}
+.balls .ball.hidden:nth-child(1){
+  transform: translateY(0rpx)
+}
+.balls .ball.hidden:nth-child(2){
+  transform: translateY(0rpx)
+}
+.balls .ball.ask{
+  transform: translateY(-100rpx);
+}
+.balls .ball.top{
+  transform: translateY(-200rpx);
+}

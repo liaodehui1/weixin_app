@@ -2,7 +2,7 @@
   <view class="header">
     <view class="swiper">
       <swiper class="swiper-img" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" bindchange="onSlideChangeEnd">
-        <block wx:for="{{imgUrls}}">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
           <swiper-item>
             <image src="{{item}}" class="slide-image" />
           </swiper-item>
@@ -16,7 +16,7 @@
     </view>
   </view>
   <view class="programas">
-    <navigator url="../papers/index" class="programa">
+    <navigator url="../programa/papers/index" class="programa">
       <image class="programa-img" src="../../images/testPaper.png"></image>
       <text class="programa-title">试卷库</text>
     </navigator>

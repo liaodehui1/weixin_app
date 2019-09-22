@@ -1,0 +1,83 @@
+.content{
+  height: calc(100vh - 88rpx);
+  overflow: hidden;
+}
+.question{
+  position: relative;
+  padding: 18rpx 14rpx;
+  border-bottom: 1px solid #aaaaaa;
+}
+.question .title{
+  display: block;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: 1rpx;
+}
+.question .pictures{
+  margin: 8rpx 0;
+  position: relative;
+}
+.question .pictures .pic{
+  display: inline-block;
+  height: 120rpx;
+  width: 120rpx;
+  margin-right: 20rpx;
+}
+.question .pictures .pic:last-child{
+  margin-right: 0;
+}
+.question .pictures .pic-count{
+  position: absolute;
+  padding: 0 4rpx;
+  text-align: center;
+  top: 8rpx;
+  left: 0;
+  font-size: 16rpx;
+  line-height: 24rpx;
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.4);
+}
+.question .publish-content{
+  color: #aaaaaa;
+}
+.question .publish-content .pub{
+  float: right;
+}
+.question .publish-content .pub .pubtime{
+  margin-right: 14rpx;
+}
+.question .publish-content .user .nickname,
+.question .publish-content .pub .pubtime,
+.question .publish-content .pub .comment .comment-count{
+  font-size: 20rpx;
+  line-height: 30rpx;
+}
+.question .publish-content .pub .comment{
+  display: inline-block;
+}
+.question .publish-content .pub .comment .comment-icon{
+  display: inline-block;
+  height: 30rpx;
+  width: 30rpx;
+  vertical-align: middle;
+  margin-right: 4rpx;
+}
+.question .publish-content .user .avatar{
+  display: inline-block;
+  margin-right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.question .mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0);
+}

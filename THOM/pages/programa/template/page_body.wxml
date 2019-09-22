@@ -1,0 +1,29 @@
+<template name="pageBody">
+  <scroll-view class="content" scroll-y="{{true}}" scroll-top="{{toView}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{questions}}" wx:key="{{index}}">
+      <view class="question" id="{{item._id}}">
+        <text class="title">{{item.title}}</text>
+        <view class="pictures">
+          <block wx:for="{{item.pictures}}" wx:for-item="path" wx:key="{{index}}">
+            <image class="pic" src="{{path}}"></image>
+          </block>
+          <text class="pic-count">共{{item.pictures.length}}张</text>
+        </view>
+        <view class="publish-content">
+          <view class="pub">
+            <text class="pubtime">{{item.pubtime}}</text>
+            <view class="comment">
+              <image class="comment-icon" src="../../../images/comment.png"></image>
+              <text class="comment-count">{{item.count}}</text>
+            </view>
+          </view>
+          <view class="user">
+            <image class="avatar" src="{{item.avatar}}"></image>
+            <text class="nickname">{{item.nickname}}</text>
+          </view>
+        </view>
+        <view class="mask" data-id="{{item._id}}" bindtap="enter"></view>
+      </view>
+    </block>
+  </scroll-view>
+</template>

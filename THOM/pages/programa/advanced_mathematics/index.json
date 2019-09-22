@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tabs":"/miniprogram_npm/vant-weapp/tabs/index",
+    "van-tab":"/miniprogram_npm/vant-weapp/tab/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#1296db",
+  "navigationBarTitleText": "高等数学",
+  "navigationBarTextStyle": "white"
+}

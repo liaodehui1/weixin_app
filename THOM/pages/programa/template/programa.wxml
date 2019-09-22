@@ -1,0 +1,14 @@
+<import src="./page_body.wxml"></import>
+<import src="./ball.wxml"></import>
+<template name="programa">
+  <view class="container">
+    <van-tabs class="vant_tabs" duration="{{0.2}}" active="{{active}}" sticky animated color="#1296db" bind:change="onChange">
+      <block wx:for="{{pageData}}" wx:key="{{index}}">
+        <van-tab title="{{item.tab}}">
+          <template is="pageBody" data="{{...item}}"></template>
+          <template is="ball" data="{{currentIndex,type:item.type,show}}"></template>
+        </van-tab>
+      </block>
+    </van-tabs>
+  </view>
+</template>

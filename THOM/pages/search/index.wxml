@@ -1,21 +1,18 @@
 <view class="container">
     <form action="/">
-        <van-search
-            v-model="value"
-            shape="round"
-            class="vant_search"
-            background="#1296db"
-            placeholder="请输入搜索关键词"
-            show-action="{{showable}}"
-            bind:search="onSearch"
-            bind:cancel="onCancel"
-            bind:focus="onFocus"
-        />
+        <van-search v-model="value" shape="round" class="vant_search" background="#1296db" placeholder="请输入搜索关键词" show-action="{{showable}}" bind:search="onSearch" bind:cancel="onCancel" bind:focus="onFocus" />
     </form>
-    <view class="pg_bd" hidden="{{!showable}}">
-        
+    <view class="pg_bd" hidden="{{showable}}">
+        <view class="nav-bar">
+            <block wx:for="{{pageData}}" wx:key="{{index}}">
+                <navigator class="nav-item" url="{{item.route}}">
+                    <image class="nav-icon" src="{{item.icon}}" />
+                    <text class="nav-txt">{{item.content}}</text>
+                </navigator>
+            </block>
+        </view>
     </view>
-    <view class="pg_search-bd" hidden="{{showable}}">
+    <view class="pg_search-bd" hidden="{{!showable}}">
         <text>{{content}}</text>
     </view>
 </view>

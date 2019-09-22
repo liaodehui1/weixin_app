@@ -1,0 +1,13 @@
+<template name="ball">
+  <view class="balls" style="{{currentIndex === type?'':'display:none'}}">
+    <view class="ball {{show?'ask':'hidden'}}" bindtap="ask">
+      <text class="ball_content">提问</text>
+    </view>
+    <view class="ball {{show?'top':'hidden'}}" bindtap="toTop" data-type="{{type}}">
+      <text class="ball_content">顶部</text>
+    </view>
+    <view class="ball" bindtap="switchTab">
+      <text class="ball_content">{{show?'v':'^'}}</text>
+    </view>
+  </view>
+</template>

@@ -1,10 +1,13 @@
 {
   "pages": [
+    "pages/programa/advanced_mathematics/index",
     "pages/index/index",
     "pages/search/index",
     "pages/my/index",
-    "pages/papers/index",
-    "pages/logs/logs"
+    "pages/programa/papers/index",
+    "pages/logs/logs",
+    "pages/programa/questionDetail/index",
+    "pages/programa/ask/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,23 +19,26 @@
   "tabBar": {
     "color": "#aaa",
     "backgroundColor": "#ffffff",
-    "selectedColor":"#1296db",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "images/shouye1.png",
-      "selectedIconPath": "images/shouye2.png"
-    },
-    {
-      "pagePath": "pages/search/index",
-      "text": "发现",
-      "iconPath": "images/faxian1.png",
-      "selectedIconPath": "images/faxian2.png"
-    },{
-      "pagePath": "pages/my/index",
-      "text": "我的",
-      "iconPath": "images/wode1.png",
-      "selectedIconPath": "images/wode2.png"
-    }]
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye1.png",
+        "selectedIconPath": "images/shouye2.png"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "text": "发现",
+        "iconPath": "images/faxian1.png",
+        "selectedIconPath": "images/faxian2.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "images/wode1.png",
+        "selectedIconPath": "images/wode2.png"
+      }
+    ]
   }
 }

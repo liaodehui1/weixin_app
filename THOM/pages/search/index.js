@@ -6,7 +6,49 @@ Page({
    */
   data: {
     showable:false,
-    content:"高考加油区"
+    content:"",
+    pageData:[
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+      {
+        content:'高等数学',
+        icon:'../../images/testPaper.png',
+        route:'../programa/advanced_mathematics/index'
+      },
+    ]
   },
   onFocus(){
     this.setData({
@@ -16,8 +58,7 @@ Page({
   },
   onCancel(){
     this.setData({
-      showable:false,
-      content:"高考加油区"
+      showable:false
     })
   },
   onSearch(){

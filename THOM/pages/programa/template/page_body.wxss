@@ -17,7 +17,7 @@
   letter-spacing: 1rpx;
 }
 .question .pictures{
-  margin: 8rpx 0;
+  margin-top: 10rpx;
   position: relative;
 }
 .question .pictures .pic{
@@ -25,6 +25,7 @@
   height: 120rpx;
   width: 120rpx;
   margin-right: 20rpx;
+  margin-bottom: 10rpx;
 }
 .question .pictures .pic:last-child{
   margin-right: 0;

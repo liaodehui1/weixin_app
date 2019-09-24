@@ -1,7 +1,4 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#1296db",
   "navigationBarTitleText": "试题库",
-  "navigationBarTextStyle": "white",
   "usingComponents": {}
 }

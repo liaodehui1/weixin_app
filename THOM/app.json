@@ -1,13 +1,15 @@
 {
   "pages": [
     "pages/programa/advanced_mathematics/index",
+    "pages/programa/ask/index",
     "pages/index/index",
     "pages/search/index",
     "pages/my/index",
     "pages/programa/papers/index",
     "pages/logs/logs",
-    "pages/programa/questionDetail/index",
-    "pages/programa/ask/index"
+    "pages/programa/questionDetail/index"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

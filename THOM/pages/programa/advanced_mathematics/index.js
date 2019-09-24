@@ -19,7 +19,10 @@ Page({
             pictures:[
               '../../../images/videos.png',
               '../../../images/videos.png',
-              '../../../images/videos.png'
+              '../../../images/videos.png',
+              '../../../images/videos.png',
+              '../../../images/videos.png',
+              '../../../images/videos.png',
             ],
             avatar:'../../../images/videos.png',
             nickname:'无心少年不懂情',
@@ -322,7 +325,14 @@ Page({
     // console.log(this.data.currentIndex)
   },
   ask(){
-    
+    let categories = [];
+    this.data.pageData.forEach(item=>{
+      categories.push(item.tab)
+    })
+    categories = JSON.stringify(categories)
+    wx.navigateTo({
+      url:`../ask/index?programa=高等数学&categories=${categories}`
+    })
   },
   /**
    * 生命周期函数--监听页面加载

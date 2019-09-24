@@ -1,2 +1,28 @@
-<!--pages/programa/ask/index.wxml-->
-<text>pages/programa/ask/index.wxml</text>
+<view class="container">
+  <view class="programa_1">
+    <text class="title">一级栏目</text>
+    <input class="content" 
+      name="programa" 
+      type="text" 
+      value="{{programa}}"
+       disabled="{{true}}"/>
+  </view>
+  <view class="category">
+    <text class="title">二级栏目</text>
+    <input name="category" 
+      class="content"
+      type="text"
+      disabled="{{true}}"
+      value="{{category}}"
+      bindtap="showDialog"></input>
+    <van-dialog
+      use-slot	
+      title="二级栏目"
+      show="{{ show }}"
+      bind:close="onClose">
+      <van-picker
+      columns="{{ categories }}"
+      bind:change="onChange"/>
+    </van-dialog>
+  </view>
+</view>

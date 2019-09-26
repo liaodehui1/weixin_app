@@ -1,0 +1,60 @@
+.uploadImg{
+  padding: 20rpx;
+}
+.uploader__file{
+  position: relative;
+  overflow: hidden;
+  border: 2rpx solid #c0ccda;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  display: inline-block;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx; 
+  width: 192rpx;
+  height: 192rpx;
+}
+.uploader__img{
+  width: 100%;
+  height: 100%;
+}
+.uploader__file-icon{
+  position: absolute;
+  background-color: red;
+  color: #ffffff;
+  top: -40rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 80rpx;
+  transform: rotate(-45deg);
+}
+.icon__delete{
+  position: absolute;
+  font-size: 20rpx;
+  top: 55%;
+  left: -7rpx;
+  transform: rotate(45deg) translateY(-50%);
+}
+.uploader__input-box{
+  position: relative;
+  border: 2rpx dashed #c0ccda;
+  border-radius: 10rpx;
+  display: inline-block;
+  width: 192rpx;
+  height: 192rpx;
+  vertical-align: top;
+}
+.uploader__input-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 56rpx;
+  color: #aaaaaa;
+}
+.uploader__input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

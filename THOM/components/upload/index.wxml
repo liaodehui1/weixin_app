@@ -1,0 +1,17 @@
+<view class="uploadImg">
+    <view class="uploader__files">
+    <!-- *this item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字 -->
+      <block wx:for="{{files}}" wx:key="*this">
+        <view class="uploader__file">
+          <image class="uploader__img" src="{{item}}"/>
+          <view class="uploader__file-icon" data-index="{{index}}" bindtap="_deleteImage">
+            <text class="icon__delete">X</text>
+          </view>
+        </view>
+      </block>
+      <view style='display:{{isCanAddFile?"":"none"}}' class="uploader__input-box">
+        <text class="uploader__input-icon">+</text>
+        <view class="uploader__input" bindtap="_chooseImage"></view>
+      </view>
+    </view>
+</view>

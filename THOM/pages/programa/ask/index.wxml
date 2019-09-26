@@ -1,4 +1,8 @@
 <view class="container">
+  <view class="notice">
+    <text>公告</text>
+    <text>【发帖发评需知】</text>
+  </view>
   <view class="programa_1">
     <text class="title">一级栏目</text>
     <input class="content" 
@@ -24,5 +28,14 @@
       columns="{{ categories }}"
       bind:change="onChange"/>
     </van-dialog>
+  </view>
+  <view class="theme">
+    <text class="title">标题</text>
+    <input type="text" name="title" placeholder="请输入标题"/>
+  </view>
+  <view class="details">
+    <text class="title">内容</text>
+    <upload></upload>
+    <textarea name="content" placeholder="输入正文内容..."></textarea>
   </view>
 </view>

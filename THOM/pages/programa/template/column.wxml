@@ -1,0 +1,12 @@
+<template name="column">
+  <van-row>
+    <block wx:for="{{items}}">
+      <van-col span="6">
+         <navigator class="programa" url="{{item.programaUrl}}">
+          <image class="programa-img" src="{{item.imgUrl}}"></image>
+          <text class="programa-title">{{item.title}}</text>
+        </navigator>
+      </van-col>
+    </block>
+  </van-row>
+</template>

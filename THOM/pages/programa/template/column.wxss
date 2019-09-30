@@ -1,0 +1,15 @@
+.programa{
+  height: 100rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.programa-img{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+}
+.programa-title{
+  padding-top: 5rpx;
+  display: block;
+  font-size: 20rpx;
+}

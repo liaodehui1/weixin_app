@@ -12,6 +12,28 @@ Page({
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
       'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
       'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+    ],
+    programas:[
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试题库'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/videos.png',
+        title:'视频'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/noto-share.png',
+        title:'笔记分享'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/concern.png',
+        title:'我的关注'
+      }
     ]
   },
   onSlideChangeEnd(e){

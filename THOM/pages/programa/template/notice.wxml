@@ -1,0 +1,11 @@
+<template name="notice">
+  <van-cell
+    is-link
+    link-type="navigateTo"
+    url="../notice/index">
+    <view slot="title">
+      <van-tag color="#F2826A">公告</van-tag>
+      <view class="van-cell-text">【官方】发帖发评须知</view>
+    </view>
+  </van-cell>
+</template>

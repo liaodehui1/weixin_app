@@ -1,41 +1,21 @@
+<import src="../template/notice.wxml"></import>
 <view class="container">
-  <view class="notice">
-    <text>公告</text>
-    <text>【发帖发评需知】</text>
-  </view>
-  <view class="programa_1">
-    <text class="title">一级栏目</text>
-    <input class="content" 
-      name="programa" 
-      type="text" 
-      value="{{programa}}"
-       disabled="{{true}}"/>
-  </view>
-  <view class="category">
-    <text class="title">二级栏目</text>
-    <input name="category" 
-      class="content"
-      type="text"
-      disabled="{{true}}"
-      value="{{category}}"
-      bindtap="showDialog"></input>
-    <van-dialog
-      use-slot	
-      title="二级栏目"
-      show="{{ show }}"
-      bind:close="onClose">
-      <van-picker
-      columns="{{ categories }}"
-      bind:change="onChange"/>
-    </van-dialog>
-  </view>
-  <view class="theme">
-    <text class="title">标题</text>
-    <input type="text" name="title" placeholder="请输入标题"/>
-  </view>
-  <view class="details">
-    <text class="title">内容</text>
-    <upload></upload>
-    <textarea name="content" placeholder="输入正文内容..."></textarea>
+  <template is="notice"></template>
+  <van-cell-group>
+    <gap></gap>
+    <van-field name="programa" label="一级栏目" readonly="{{true}}" value="{{ programa }}" border="{{false}}" />
+    <gap></gap>
+    <van-field name="category" label="二级栏目" readonly="{{true}}" value="{{ category }}" border="{{ false }}" bindtap="showDialog" />
+  <van-dialog use-slot title="二级栏目" show="{{ show }}" bind:close="onClose">
+    <van-picker columns="{{ categories }}" id="picker"/>
+  </van-dialog>
+    <gap></gap>
+    <van-field clearable="{{true}}" bind:blur="setTitle" name="title" label="标题" placeholder="请输入标题" border="{{ false }}" />
+    <gap></gap>
+    <van-field clearable="{{true}}" bind:blur="setContent" name="content" label="内容" type="textarea" placeholder="输入正文内容..." autosize border="{{ false }}" />
+    <upload id="upload_img"></upload>
+  </van-cell-group>
+  <view class="btn">
+    <van-button bind:click="upload" type="primary" size="large" color="#1296db">发布帖子</van-button>
   </view>
 </view>

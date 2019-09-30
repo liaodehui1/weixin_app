@@ -5,9 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hasUser:false,
+    programas:[
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试卷库'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试卷库'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试卷库'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试卷库'
+      },
+      {
+        programaUrl:'../programa/papers/index',
+        imgUrl:'../../images/testPaper.png',
+        title:'试卷库'
+      }
+    ]
   },
-
+  bindGetUserInfo(detail){
+    // console.log(detail)
+    if(detail){
+      this.setData({
+        hasUser:true
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

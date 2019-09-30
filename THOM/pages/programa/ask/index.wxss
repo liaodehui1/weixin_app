@@ -1,1 +1,7 @@
-/* pages/programa/ask/index.wxss */
+@import '../template/notice.wxss';
+.btn{
+  margin-top: 25rpx;
+  height: 100rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}

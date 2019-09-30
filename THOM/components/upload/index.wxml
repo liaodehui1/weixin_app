@@ -10,8 +10,11 @@
         </view>
       </block>
       <view style='display:{{isCanAddFile?"":"none"}}' class="uploader__input-box">
-        <text class="uploader__input-icon">+</text>
-        <view class="uploader__input" bindtap="_chooseImage"></view>
+        <!-- <view class="uploader__input-content"> -->
+          <text class="uploader__input-icon">+</text>
+          <!-- <text class="uploader__input-text">添加图片</text> -->
+        <!-- </view> -->
+        <view class="uploader__input-mask" bindtap="_chooseImage"></view>
       </view>
     </view>
 </view>

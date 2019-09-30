@@ -1,1 +1,30 @@
-/* pages/my/index.wxss */
+@import '../programa/template/column.wxss';
+.header{
+  position: relative;
+  height: 80rpx;
+  padding: 10rpx 0;
+  line-height: 80rpx; 
+}
+.avatar{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.nickName{
+  display: inline-block;
+  margin-left: 25rpx;
+}
+.editBtn{
+  position: absolute;
+  right: 25rpx;
+}
+.loginBtn{
+  margin-left: 25rpx;
+}
+.gap{
+  height: 50rpx !important; /*externalClasses样式优先级不确定*/
+}

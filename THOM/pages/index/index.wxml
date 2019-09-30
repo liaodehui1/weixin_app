@@ -1,3 +1,4 @@
+<import src="../programa/template/column.wxml"></import>
 <view class="container">
   <view class="header">
     <view class="swiper">
@@ -16,25 +17,6 @@
     </view>
   </view>
   <view class="programas">
-    <navigator url="../programa/papers/index" class="programa">
-      <image class="programa-img" src="../../images/testPaper.png"></image>
-      <text class="programa-title">试卷库</text>
-    </navigator>
-    <navigator class="programa">
-      <image class="programa-img" src="../../images/videos.png"></image>
-      <text class="programa-title">视频</text>
-    </navigator>
-    <navigator class="programa">
-      <image class="programa-img" src="../../images/noto-share.png"></image>
-      <text class="programa-title">笔记分享</text>
-    </navigator>
-    <navigator class="programa">
-      <image class="programa-img" src="../../images/concern.png"></image>
-      <text class="programa-title">我的关注</text>
-    </navigator>
-    <navigator class="programa">
-      <image class="programa-img" src="../../images/upload-paper.png"></image>
-      <text class="programa-title">试卷上传</text>
-    </navigator>
+    <template is="column" data="{{span:6,items:programas}}"></template>
   </view>
 </view>

@@ -1,6 +1,11 @@
 .uploadImg{
   padding: 20rpx;
 }
+.uploader__files{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .uploader__file{
   position: relative;
   overflow: hidden;
@@ -10,7 +15,8 @@
   display: inline-block;
   margin-right: 16rpx;
   margin-bottom: 16rpx; 
-  width: 192rpx;
+  /* width: 192rpx; */
+  flex: 0 0 192rpx;
   height: 192rpx;
 }
 .uploader__img{
@@ -51,7 +57,7 @@
   font-size: 56rpx;
   color: #aaaaaa;
 }
-.uploader__input{
+.uploader__input-mask{
   position: absolute;
   left: 0;
   top: 0;

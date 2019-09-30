@@ -7,46 +7,46 @@ Page({
   data: {
     showable:false,
     content:"",
-    pageData:[
+    programas:[
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
       {
-        content:'高等数学',
-        icon:'../../images/testPaper.png',
-        route:'../programa/advanced_mathematics/index'
+        title:'高等数学',
+        imgUrl:'../../images/testPaper.png',
+        programaUrl:'../programa/advanced_mathematics/index'
       },
     ]
   },

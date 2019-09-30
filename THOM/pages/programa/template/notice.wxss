@@ -1,0 +1,3 @@
+.van-cell-text{
+  display: inline-block;
+}

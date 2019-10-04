@@ -1,2 +1,2 @@
 <import src="../template/programa.wxml"></import>
-<template is="programa" data="{{pageData,currentIndex,show}}"></template>
+<template is="programa" data="{{categories,pageData,currentIndex,show}}"></template>

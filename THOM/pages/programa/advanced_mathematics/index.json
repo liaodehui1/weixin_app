@@ -3,5 +3,6 @@
     "van-tabs":"/miniprogram_npm/vant-weapp/tabs/index",
     "van-tab":"/miniprogram_npm/vant-weapp/tab/index"
   },
-  "navigationBarTitleText": "高等数学"
+  "navigationBarTitleText": "高等数学",
+  "enablePullDownRefresh":true
 }

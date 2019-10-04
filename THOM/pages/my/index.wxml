@@ -1,8 +1,8 @@
 <import src="../programa/template/column.wxml"></import>
 <view class="container">
   <view class="header" wx:if="{{hasUser}}">
-      <open-data class="avatar" type="userAvatarUrl"></open-data>
-      <open-data class="nickName" type="userNickName" lang="zh_CN"></open-data>
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="nickName">{{userInfo.nickName}}</text>
       <van-button class="editBtn" size="small" plain type="primary" color="#1296db">编辑资料</van-button>
   </view>
   <view class="header" wx:else>

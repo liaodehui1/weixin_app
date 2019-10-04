@@ -1,10 +1,12 @@
-// pages/my/index.js
+const app =  getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo:null,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     hasUser:false,
     programas:[
@@ -35,11 +37,13 @@ Page({
       }
     ]
   },
-  bindGetUserInfo(detail){
-    // console.log(detail)
-    if(detail){
+  bindGetUserInfo(e){
+    // console.log(e.detail)
+    if(e.detail && e.detail.userInfo){
+      app.globalData.userInfo = e.detail.userInfo
       this.setData({
-        hasUser:true
+        hasUser:true,
+        userInfo:e.detail.userInfo
       })
     }
   },
@@ -47,7 +51,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(app.globalData.userInfo)
+    if(app.globalData.userInfo){
+      this.setData({
+        userInfo:app.globalData.userInfo,
+        hasUser:true
+      })
+    }
   },
 
   /**

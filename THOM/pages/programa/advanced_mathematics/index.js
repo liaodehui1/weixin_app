@@ -1,4 +1,5 @@
 // pages/programa/advanced_mathematics/index.js
+var util = require("../../../utils/util")
 Page({
 
   /**
@@ -7,302 +8,13 @@ Page({
   data: {
     currentIndex:0,
     show:false,
-    pageData:[
-      {
-        type:0,
-        toView: 0,
-        tab:'函数与极限',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        type:1,
-        toView: 0,
-        tab:'无穷级数',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        tab:'微分方程',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        tab:'定积分及其应用',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        tab:'不定积分',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        tab:'微分中值定理',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      },
-      {
-        tab:'导数与微分',
-        questions:[
-          {
-            _id:'A123',
-            title:'老师的ppt有点看不懂，求解,老师的ppt有点看不懂，求解',
-            pictures:[
-              '../../../images/videos.png',
-              '../../../images/videos.png',
-              '../../../images/videos.png'
-            ],
-            avatar:'../../../images/videos.png',
-            nickname:'无心少年不懂情',
-            pubtime:'2019-09-20',
-            count:7
-          },
-        ]
-      }
-    ]
+    categories:["函数与极限","无穷级数","微分方程","定积分及其应用","不定积分","微分中值定理","导数与微分"],
+    pageData:[]
   },
   enter(e){
     // console.log(event)
     wx.navigateTo({
-      url: `../questionDetail/index?_id=${e.currentTarget.dataset.id}`
+      url: `../post/index?_id=${e.currentTarget.dataset.id}`
     });
   },
   switchTab(){
@@ -325,20 +37,48 @@ Page({
     // console.log(this.data.currentIndex)
   },
   ask(){
-    let categories = [];
-    this.data.pageData.forEach(item=>{
-      categories.push(item.tab)
-    })
-    categories = JSON.stringify(categories)
+    let categories = JSON.stringify(this.data.categories)
     wx.navigateTo({
       url:`../ask/index?programa=高等数学&categories=${categories}`
+    })
+  },
+  fetchPosts(){
+    let that = this
+    return new Promise((reslove,reject)=>{
+      wx.cloud.callFunction({
+        name: 'getPosts',
+        data: {
+          programa: "高等数学"
+        }
+      }).then(res =>{
+        // console.log(res.result.data)
+        let pageData = util.formatPoats(res.result.data,that.data.categories)
+        // console.log(pageData)
+        reslove(pageData)
+      }).catch(error=>{
+        reject(error)
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.init()
+    wx.showLoading({
+      title: "加载中",
+      mask: true
+    });
+    this.fetchPosts()
+      .then(res=>{
+        this.setData({
+          pageData:res
+        })
+        wx.hideLoading();
+      }).catch(error=>{
+        console.log(error)
+        wx.hideLoading();
+      })
   },
 
   /**
@@ -373,7 +113,22 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showLoading({
+      title: "加载中",
+      mask: true
+    });
+    this.fetchPosts()
+    .then(res=>{
+      this.setData({
+        pageData:res
+      })
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    }).catch(error=>{
+      console.log(error)
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    })
   },
 
   /**

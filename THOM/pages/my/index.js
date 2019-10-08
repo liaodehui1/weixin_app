@@ -38,12 +38,25 @@ Page({
     ]
   },
   bindGetUserInfo(e){
-    // console.log(e.detail)
+    console.log(e.detail)
     if(e.detail && e.detail.userInfo){
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         hasUser:true,
         userInfo:e.detail.userInfo
+      })
+      wx.cloud.init()
+      wx.cloud.callFunction({
+        name:'login',
+        success:res => {
+          wx.cloud.callFunction({
+            name: 'addUser',
+            data:{
+              userInfo:e.detail.userInfo,
+              openid:res.result.openid
+            }
+          })
+        }
       })
     }
   },
@@ -51,12 +64,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.userInfo)
+    // console.log(app.globalData.userInfo)
     if(app.globalData.userInfo){
       this.setData({
         userInfo:app.globalData.userInfo,
         hasUser:true
       })
+    }else if(this.data.canIUse){
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res,
+          hasUser: true
+        })
+      }
     }
   },
 

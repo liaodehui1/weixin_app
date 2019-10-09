@@ -42,22 +42,35 @@ Page({
   upload(){
     var that = this
     var upload_img = this.selectComponent('#upload_img')
-    let data = {
-      image_files:upload_img.data.files,
-      programa:that.data.programa,
-      category:that.data.category,
-      title:that.data.title,
-      content:that.data.content
-    }
-    upload.uploadPost(data)
+    var image_files = upload_img.data.files
+    var avatarUrl = app.globalData.userInfo.avatarUrl
+    var nickName = app.globalData.userInfo.nickName
+    upload.uploadPost(image_files)
       .then(res=>{
-        console.log(res)
+        // console.log(res)
+        wx.cloud.init()
+        return wx.cloud.callFunction({
+          name:'addPost',
+          data:{
+            images_fileID:res,
+            programa:that.data.programa,
+            category:that.data.category,
+            title:that.data.title,
+            content:that.data.content,
+            avatarUrl:avatarUrl,
+            nickName:nickName
+          }
+        })
+      }).then(res=>{
+        // console.log(res)
         wx.hideLoading()
         wx.showToast({
           title: '发帖成功',
           icon: 'success',
           duration: 2000,
         });
+      }).catch(err => {
+        console.log(err)
       })
     wx.showLoading({
       title: "发帖中",

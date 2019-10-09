@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/programa/advanced_mathematics/index",
     "pages/my/index",
-    "pages/programa/advanced_mathematics/index",   
+       
     "pages/index/index",
     "pages/programa/ask/index",
     "pages/search/index",

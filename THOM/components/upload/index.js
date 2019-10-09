@@ -30,7 +30,7 @@ Component({
    */
   methods: {
     _chooseImage:function (e){
-      console.log(e)
+      // console.log(e)
       let that = this
       wx.chooseImage({
         count: that.data.maxFileCount - that.data.files.length,

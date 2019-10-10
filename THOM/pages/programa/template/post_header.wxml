@@ -1,0 +1,19 @@
+<template name="header">
+  <view class="header">
+    <view class="landlord">
+      <view class="user" bindtap="toUser">
+        <image class="avatar" src="{{post.avatar}}"></image>
+        <text class="nickname">{{post.nickname}}</text>
+      </view>
+      <van-tag type="primary">楼主</van-tag>
+    </view>
+    <view class="other">
+      <text class="date">{{post.pubtime}}</text>
+      <van-icon name="like" color="{{like?'red':''}}" bind:click="follow"/>
+      <view class="comment">
+        <van-icon name="comment-o" />
+        <text class="count">{{post.count}}</text>
+      </view>
+    </view>
+  </view>
+</template>

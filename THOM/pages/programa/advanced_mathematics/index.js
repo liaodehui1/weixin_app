@@ -71,9 +71,14 @@ Page({
     });
     this.fetchPosts()
       .then(res=>{
+        console.log(res)
         this.setData({
           pageData:res
         })
+        wx.setStorage({
+          key: 'posts',
+          data: res
+        });
         wx.hideLoading();
       }).catch(error=>{
         console.log(error)

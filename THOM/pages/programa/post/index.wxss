@@ -1,1 +1,1 @@
-/* pages/programa/post/index.wxss */
+@import '../template/post_header.wxss';

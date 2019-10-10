@@ -1,0 +1,40 @@
+.header{
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  /* 不使用float */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user{
+  display: inline-block;
+}
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.nickname{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 500;
+  padding: 0 10rpx;
+}
+.other{
+  color: #aaaaaa;
+  font-size: 20rpx;
+}
+.date{
+  margin-bottom: 8rpx;
+  display: block;
+}
+.comment{
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.count{
+  margin-left: 4rpx;
+}

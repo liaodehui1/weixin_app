@@ -1,2 +1,4 @@
-<!--pages/programa/post/index.wxml-->
-<text>pages/programa/post/index.wxml</text>
+<import src="../template/post_header.wxml"></import>
+<view class="container">
+  <template is="header" data="{{post,like}}"></template>
+</view>

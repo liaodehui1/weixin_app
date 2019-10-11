@@ -85,6 +85,31 @@ Page({
         wx.hideLoading();
       })
   },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.showLoading({
+      title: "加载中",
+      mask: true
+    });
+    this.fetchPosts()
+    .then(res=>{
+      this.setData({
+        pageData:res
+      })
+      wx.setStorage({
+        key: 'posts',
+        data: res
+      });
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    }).catch(error=>{
+      console.log(error)
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -114,27 +139,6 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    wx.showLoading({
-      title: "加载中",
-      mask: true
-    });
-    this.fetchPosts()
-    .then(res=>{
-      this.setData({
-        pageData:res
-      })
-      wx.hideLoading();
-      wx.stopPullDownRefresh();
-    }).catch(error=>{
-      console.log(error)
-      wx.hideLoading();
-      wx.stopPullDownRefresh();
-    })
-  },
 
   /**
    * 页面上拉触底事件的处理函数

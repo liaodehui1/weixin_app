@@ -6,25 +6,23 @@ Page({
    */
   data: {
     post:{},
-    like:false
+    like:false,
+    default:true
   },
   follow(){
     this.setData({
       like:!this.data.like
     })
-    if(this.data.like){
-      wx.showToast({
-        title: '关注成功',
-        icon: 'success',
-        duration: 1000,
-        mask: true
-      });
-    }
   },
   toUser(){
     wx.navigateTo({
       url: `../userIntro/index?_openid=${this.data.post._openid}`,
     });
+  },
+  switch(){
+    this.setData({
+      default:!this.data.default
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -33,7 +31,7 @@ Page({
     wx.getStorage({
       key: 'posts',
       success: (result)=>{
-        console.log(result)
+        // console.log(result)
         let post = {}
         for(let item of result.data){
           post = item.questions.find(cur=>{
@@ -43,10 +41,13 @@ Page({
             break
           }
         }
+        wx.setNavigationBarTitle({
+          title: post.category
+        })
         this.setData({
           post:post
         })
-        // console.log(post)
+        console.log(post)
       }
     });
   },

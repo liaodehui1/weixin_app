@@ -1,1 +1,63 @@
-@import '../template/post_header.wxss';
+.header{
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 6rpx 20rpx 0 10rpx;
+  /* 不使用float */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user{
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.nickname{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 500;
+  padding-right: 10rpx;
+}
+.date{
+  display: block;
+  margin-top: 8rpx;
+  font-size: 20rpx;
+}
+.other{
+  color: #aaaaaa;
+  font-size: 20rpx;
+}
+.post_content{
+  padding: 0 20rpx;
+}
+.title{
+  display: block;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 700;
+}
+.content{
+  display: block;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.comment{
+  padding: 0 20rpx;
+}
+.comment_header{
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.09);
+}
+.theme{
+  font-size: 32rpx;
+  font-weight: 500;
+}

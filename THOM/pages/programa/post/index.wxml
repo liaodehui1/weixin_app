@@ -1,4 +1,53 @@
-<import src="../template/post_header.wxml"></import>
 <view class="container">
-  <template is="header" data="{{post,like}}"></template>
+  <view class="header">
+    <view class="landlord">
+      <image class="avatar" src="{{post.avatar}}" bindtap="toUser"></image>
+      <view class="user">
+        <text class="nickname" bindtap="toUser">{{post.nickname}}</text>
+        <van-tag type="primary">楼主</van-tag>
+        <text class="date">发布于{{post.pubtime}}</text>
+      </view>
+    </view>
+    <view class="other">
+      <van-button 
+        size="small" 
+        plain="{{like ? false : true}}" 
+        type="info" 
+        bind:click="follow">
+        {{like?'已关注':'关注'}}
+      </van-button>
+    </view>
+  </view>
+  <gap></gap>
+  <view class="post_content">
+    <text class="title">{{post.title}}</text>
+    <text class="content">{{post.content}}</text>
+    <view class="imgBox">
+      <block wx:for="{{post.pictures}}" wx:key="{{index}}">
+        <image class="pic" src="{{item}}"></image>
+      </block>
+    </view>
+  </view>
+  <gap></gap>
+  <view class="comment">
+    <view class="comment_header">
+      <text class="theme">{{post.count}} 条评论</text>
+      <view class="type_btn">
+        <van-button 
+          size="mini" 
+          plain="{{!default}}"
+          type="info"
+          bind:click="switch">
+          默认排序
+        </van-button>
+        <van-button 
+          size="mini" 
+          plain="{{default}}"
+          type="info"
+           bind:click="switch">
+          时间排序
+        </van-button>
+      </view>
+    </view>
+  </view>
 </view>

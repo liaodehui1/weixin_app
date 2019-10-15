@@ -7,7 +7,8 @@ Page({
   data: {
     post:{},
     like:false,
-    default:true
+    default:true,
+    show:false
   },
   follow(){
     this.setData({
@@ -22,6 +23,16 @@ Page({
   switch(){
     this.setData({
       default:!this.data.default
+    })
+  },
+  discuss(){
+    this.setData({
+      show:true
+    })
+  },
+  onClose(){
+    this.setData({
+      show:false
     })
   },
   /**

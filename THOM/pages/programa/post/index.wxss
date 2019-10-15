@@ -61,3 +61,91 @@
   font-size: 32rpx;
   font-weight: 500;
 }
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 10rpx;
+  background-color: #fff;
+  height: 60rpx;
+}
+.items{
+  display: flex;
+}
+.favorite,.transpond{
+  flex: 1;
+  padding-top: 6rpx;
+  text-align: center;
+  border-top: 2rpx solid #3399ff;
+}
+.discuss-box{
+  flex: 0 0 120rpx;
+}
+.discuss{
+  margin: 0 auto;
+  height: 86rpx;
+  width: 86rpx;
+  background-color: #3399ff;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+}
+.circle{
+  position: absolute;
+  width: 120rpx;
+  height: 60rpx;
+  border: 2rpx solid #3399ff;
+  border-radius: 120rpx 120rpx 0 0;
+  border-bottom: none;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,-100%);
+  background-color: #fff;
+  z-index: -1;
+}
+.blur{
+  filter: blur(10rpx);
+}
+.content-box{
+  margin-top: 100rpx;
+}
+.box-header{
+  display: flex;
+  justify-content: center;
+  height: 64rpx;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.box-theme{
+  font-size: 32rpx;
+  color: #fff;
+  margin: 0 20rpx;
+}
+/* ::before和::after只有在view中有用 要有content*/
+.box-title::before,.box-title::after{
+  content: '———————';
+  display: inline-block;
+  color: #fff;
+}
+.detail{
+  color: #fff !important;
+}
+.upload-box{
+  margin: 32rpx 0;
+}
+.close{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20rpx;
+  text-align: center;
+  width: 100%;
+}
+.btn{
+  margin-top: 25rpx;
+  height: 100rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}

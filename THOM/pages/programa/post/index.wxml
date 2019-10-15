@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container {{show?'blur':''}}">
   <view class="header">
     <view class="landlord">
       <image class="avatar" src="{{post.avatar}}" bindtap="toUser"></image>
@@ -50,4 +50,54 @@
       </view>
     </view>
   </view>
+  <view class="footer">
+    <view class="items">
+      <view class="favorite" bindtap="favorite">
+        <van-icon name="like-o" size="60rpx"/>
+      </view>
+      <view class="discuss-box">
+        <view class="discuss" bindtap="discuss">
+          <van-icon name="edit" size="60rpx"/>
+        </view>
+      </view>
+      <view class="transpond" bindtap="transpond">
+        <van-icon name="share" size="60rpx"/>
+      </view>
+    </view>
+    <view class="circle"></view>
+  </view>
 </view>
+<van-popup
+    show="{{show}}"
+    close-on-click-overlay="{{false}}"
+    custom-style="background:rgba(0,0,0,0);width:100%;height:100vh">
+  <view class="content-box">
+    <view class="box-header">
+      <view class="box-title">
+        <text class="box-theme">评论 | 回复</text>
+      </view>
+    </view>
+    <view class="details">
+      <van-field 
+        clearable="{{true}}" 
+        bind:blur="setContent" 
+        name="content" 
+        label="内容" 
+        type="textarea" 
+        placeholder="输入正文内容..." 
+        autosize 
+        border="{{ false }}"
+        custom-style="background-color:rgba(0,0,0,0);color:#fff;font-size:32rpx;"
+        input-class="detail"/>
+      <view class="upload-box">
+        <upload id="upload_img"></upload>
+      </view>
+    </view>
+    <view class="btn">
+      <van-button bind:click="upload" type="primary" size="large" color="#1296db">发布</van-button>
+    </view>
+  </view>
+  <view class="close">
+    <van-icon name="close" color="#fff" size="2em" bind:click="onClose"/>
+  </view>
+</van-popup>

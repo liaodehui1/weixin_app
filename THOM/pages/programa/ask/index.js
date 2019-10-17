@@ -45,7 +45,7 @@ Page({
     var image_files = upload_img.data.files
     var avatarUrl = app.globalData.userInfo.avatarUrl
     var nickName = app.globalData.userInfo.nickName
-    upload.uploadPost(image_files)
+    upload.uploadPost('THOM/post_images/',image_files)
       .then(res=>{
         // console.log(res)
         wx.cloud.init()

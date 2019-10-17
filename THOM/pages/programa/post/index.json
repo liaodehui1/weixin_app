@@ -4,7 +4,7 @@
     "van-tag":"/miniprogram_npm/vant-weapp/tag/index",
     "gap":"/components/gap/index",
     "van-icon":"/miniprogram_npm/vant-weapp/icon/index",
-    "van-popup":"/miniprogram_npm/vant-weapp/popup/index",
+    "van-transition":"/miniprogram_npm/vant-weapp/transition/index",
     "van-field":"/miniprogram_npm/vant-weapp/field/index",
     "upload":"/components/upload/index"
   }

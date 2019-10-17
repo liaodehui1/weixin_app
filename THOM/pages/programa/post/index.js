@@ -1,18 +1,24 @@
 // pages/programa/post/index.js
+var upload = require('../../../utils/upload')
+var app =  getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     post:{},
     like:false,
+    follow:false,
     default:true,
-    show:false
+    show:false,
+    content:'',
+    loading:true,
+    comments:{},
+    onThumbs:false
   },
   follow(){
     this.setData({
-      like:!this.data.like
+      follow:!this.data.follow
     })
   },
   toUser(){
@@ -35,10 +41,70 @@ Page({
       show:false
     })
   },
+  setContent(e){
+    this.setData({
+      content:e.detail.value
+    })
+  },
+  favorite(){
+    this.setData({
+      like:!this.data.like
+    })
+    if(this.data.like){
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        duration:500
+      });
+    }
+  },
+  submit(){
+    var that = this
+    var upload_img = this.selectComponent('#upload_img')
+    var image_files = upload_img.data.files
+  
+    upload.uploadPost('THOM/comment_images/',image_files)
+      .then(res=>{
+        // console.log(res)
+        wx.cloud.init()
+        return wx.cloud.callFunction({
+          name:'addComment',
+          data:{
+            images_fileID:res,
+            content:that.data.content,
+            post_id:that.data.post._id,
+            openid:app.globalData.userInfo.openid
+          }
+        })
+      }).then(res=>{
+        // console.log(res)
+        that.setData({
+          show:false
+        })
+        wx.hideLoading()
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 1000,
+        });
+      }).catch(err => {
+        console.log(err)
+      })
+    wx.showLoading({
+      title: "发布中",
+    });
+  },
+  thumbsUp(e){
+    console.log(e)
+    this.setData({
+      onThumbs:!this.data.onThumbs
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.userInfo)
     wx.getStorage({
       key: 'posts',
       success: (result)=>{
@@ -60,6 +126,25 @@ Page({
         })
         console.log(post)
       }
+    });
+    wx.cloud.init()
+    wx.cloud.callFunction({
+      name:'getComments',
+      data:{
+        post_id:options._id // 不用this.data.post._id null
+      }
+    }).then(res=>{
+      console.log(res.result.data)
+      this.setData({
+        loading:false,
+        comments:res.result.data
+      })
+      wx.hideLoading()
+    }).catch(err => {
+      console.log(err)
+    })
+    wx.showLoading({
+      title: "加载中...",
     });
   },
 

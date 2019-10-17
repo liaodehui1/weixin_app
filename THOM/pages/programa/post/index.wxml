@@ -1,4 +1,4 @@
-<view class="container {{show?'blur':''}}">
+<view class="container {{show?'blur':''}}" wx:if="{{!loading}}">
   <view class="header">
     <view class="landlord">
       <image class="avatar" src="{{post.avatar}}" bindtap="toUser"></image>
@@ -11,10 +11,10 @@
     <view class="other">
       <van-button 
         size="small" 
-        plain="{{like ? false : true}}" 
+        plain="{{follow ? false : true}}" 
         type="info" 
         bind:click="follow">
-        {{like?'已关注':'关注'}}
+        {{follow?'已关注':'关注'}}
       </van-button>
     </view>
   </view>
@@ -22,15 +22,15 @@
   <view class="post_content">
     <text class="title">{{post.title}}</text>
     <text class="content">{{post.content}}</text>
-    <view class="imgBox">
-      <block wx:for="{{post.pictures}}" wx:key="{{index}}">
-        <image class="pic" src="{{item}}"></image>
+    <view class="pictures">
+      <block wx:for="{{post.pictures}}" wx:for-item="path" wx:key="{{index}}">
+        <image class="pic" src="{{path}}"></image>
       </block>
     </view>
   </view>
   <gap></gap>
-  <view class="comment">
-    <view class="comment_header">
+  <view class="comments-box">
+    <view class="comments_header">
       <text class="theme">{{post.count}} 条评论</text>
       <view class="type_btn">
         <van-button 
@@ -49,11 +49,46 @@
         </van-button>
       </view>
     </view>
+    <view class="comments_list">
+      <block wx:for="{{comments}}" wx:key="{{index}}">
+        <view class="comments-item">
+          <view class="left-box">
+            <image class="comment-avatar" src="{{post.avatar}}"></image>
+          </view>
+          <view class="right-box">
+            <view class="comment-trigger">
+              <view>
+                <navigator class="comment-nickname" url="../userIntro/index?_openid={{item.openid}}">{{post.nickname}}</navigator>
+                <text class="comment-date">{{item.pubtime}}</text>
+              </view>
+              <view>
+                <van-icon name="flag-o" />
+              </view>
+            </view>
+            <view class="comment-content">
+              <view class="comment-txt">{{item.content}}</view>
+              <view class="pictures">
+                 <block wx:for="{{item.pictures}}" wx:for-item="path" wx:key="{{index}}">
+                  <image class="pic" src="{{path}}"></image>
+                </block>
+              </view>
+            </view>
+            <view class="comment-ops">
+              <view class="thumbs" data-openid="{{item.openid}}" bindtap="thumbsUp">
+                <van-icon name="good-job" color="{{onThumbs?'#3399ff':''}}"/>
+                <text class="thumbs_txt">{{onThumbs?'已赞':'赞'}}</text>
+              </view>
+              <text class="reply" bindtap="discuss">回复</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
   <view class="footer">
     <view class="items">
       <view class="favorite" bindtap="favorite">
-        <van-icon name="like-o" size="60rpx"/>
+        <van-icon name="like-o" size="60rpx" color="{{like?'red':''}}"/>
       </view>
       <view class="discuss-box">
         <view class="discuss" bindtap="discuss">
@@ -67,25 +102,22 @@
     <view class="circle"></view>
   </view>
 </view>
-<van-popup
-    show="{{show}}"
-    close-on-click-overlay="{{false}}"
-    custom-style="background:rgba(0,0,0,0);width:100%;height:100vh">
+<view class="popup" wx:if="{{show}}">
   <view class="content-box">
     <view class="box-header">
-      <view class="box-title">
-        <text class="box-theme">评论 | 回复</text>
-      </view>
+      <text class="box-theme"> 评论 | 回复 </text>
     </view>
     <view class="details">
-      <van-field 
+      <van-field
         clearable="{{true}}" 
         bind:blur="setContent" 
         name="content" 
         label="内容" 
         type="textarea" 
         placeholder="输入正文内容..." 
-        autosize 
+        autosize
+        maxlength="60"
+        fixed="{{true}}"
         border="{{ false }}"
         custom-style="background-color:rgba(0,0,0,0);color:#fff;font-size:32rpx;"
         input-class="detail"/>
@@ -94,10 +126,11 @@
       </view>
     </view>
     <view class="btn">
-      <van-button bind:click="upload" type="primary" size="large" color="#1296db">发布</van-button>
+      <van-button bind:click="submit" type="primary" size="large" color="#1296db">发布</van-button>
     </view>
   </view>
   <view class="close">
     <van-icon name="close" color="#fff" size="2em" bind:click="onClose"/>
   </view>
-</van-popup>
+</view>
+
